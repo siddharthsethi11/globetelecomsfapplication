@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<completeReportDTO>
+    <moduleResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="testSuiteResultDTO">
+        <codeCoverage xsi:type="processCoverageDTO">
+            <activityCoverage xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">Start</activityCoverage>
+            <activityCoverage xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">End</activityCoverage>
+            <activityCoverage xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">SalesforceCreateAll</activityCoverage>
+            <moduleName>SalesforceAPI</moduleName>
+            <processName>uc9_sf_workday.sf_create</processName>
+            <transitionCoverage xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">SalesforceCreateAllToEnd</transitionCoverage>
+            <transitionCoverage xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">StartToSalesforceCreateAll</transitionCoverage>
+        </codeCoverage>
+        <moduleInfo>
+            <appName>SalesforceAPI.application</appName>
+            <appVersion>1.0</appVersion>
+            <moduleName>SalesforceAPI</moduleName>
+            <moduleVersion>1.0.0.qualifier</moduleVersion>
+        </moduleInfo>
+        <testSetResult xsi:type="testSetResultDTO">
+            <packageName>uc9_sf_workday</packageName>
+            <processName>uc9_sf_workday.sf_create</processName>
+            <testCaseResult xsi:type="testCaseResultDTO">
+                <assertionFailure>0</assertionFailure>
+                <assertionResult xsi:type="assertionResultDTO">
+                    <activityName>SalesforceCreateAll</activityName>
+                    <assertionStatus>passed</assertionStatus>
+                    <instanceId>bw0a100</instanceId>
+                    <message></message>
+                </assertionResult>
+                <assertions>1</assertions>
+                <assertionsRun>1</assertionsRun>
+                <processFailures>0</processFailures>
+                <testCaseFile>/SalesforceAPI/Tests/SalesforceAPI1.bwt</testCaseFile>
+            </testCaseResult>
+        </testSetResult>
+    </moduleResult>
+</completeReportDTO>

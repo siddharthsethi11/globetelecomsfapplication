@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/SalesforceAPI/Tests/SalesforceAPI1.bwt">
+  <ProcessNode Id="uc9_sf_workday.sf_create" Name="uc9_sf_workday.sf_create" ModelType="BW" moduleName="SalesforceAPI">
+    <Assertion Id="10e7a57e-98a8-4d2e-9a8c-b83fed649f4e" Name="SalesforceCreateAll" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;urn:partner.soap.sforce.com_createAllOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SalesforceCreateAll&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:success=true()&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;urn:partner.soap.sforce.com_createAllOutput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SalesforceCreateAll&quot;/>&lt;xsl:template name=&quot;SalesforceCreateAll&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;boolean>&lt;testInput>&lt;xsl:value-of select=&quot;$SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:success&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;true()&quot;/>&lt;/goldInput>&lt;/boolean>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="uc9_sf_workday.sf_create">
+      <Inputs Id="b76b962e-98bc-4db5-ae4e-830711427c93SalesforceAPI_uc9_sf_workday.sf_create_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS">
+        <informations Name="input" nameSpace="http://www.example.com/namespaces/tns/1581511171644">
+          <nameSpaces prefix="tns" nameSapce="http://www.example.com/namespaces/tns/1581511171644"/>
+          <Parameter Name="tns:Element">
+            <parameters Name="tns:fname" Value="john" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+            <parameters Name="tns:lname" Value="doe" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+            <parameters Name="tns:email" Value="jdoe@tibco.com" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+            <parameters Name="tns:phone" Value="93222" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:Element xmlns:tns='http://www.example.com/namespaces/tns/1581511171644' >&lt;tns:fname>john&lt;/tns:fname>&lt;tns:lname>doe&lt;/tns:lname>&lt;tns:email>jdoe@tibco.com&lt;/tns:email>&lt;tns:phone>93222&lt;/tns:phone>&lt;/tns:Element>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>

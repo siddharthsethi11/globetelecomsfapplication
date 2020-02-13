@@ -1,0 +1,2 @@
+Tests for uc9_sf_workday.sf_create
+Tests run : 1    Success : 1 	Failure : 0	Errors : 0
