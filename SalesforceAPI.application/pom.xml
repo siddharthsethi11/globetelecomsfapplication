@@ -12,11 +12,11 @@
   <packaging>bwear</packaging>
   <properties>
     <skipTests>true</skipTests>
-    <project.type>Docker</project.type>
     <bw.Home>/bwce/2.5</bw.Home>
+    <project.type>Docker</project.type>
     <k8s.property.file>k8s-dev.properties</k8s.property.file>
-    <docker.property.file>docker-dev.properties</docker.property.file>
     <failIfNoTests>false</failIfNoTests>
+    <docker.property.file>docker-dev.properties</docker.property.file>
     <tibco.Home>/opt/tibco/bwce251v1</tibco.Home>
   </properties>
   <build>
