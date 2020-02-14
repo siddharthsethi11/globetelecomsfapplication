@@ -13,14 +13,14 @@
         <informations Name="input" nameSpace="http://www.example.com/namespaces/tns/1581511171644">
           <nameSpaces prefix="tns" nameSapce="http://www.example.com/namespaces/tns/1581511171644"/>
           <Parameter Name="tns:Element">
-            <parameters Name="tns:fname" Value="john" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
-            <parameters Name="tns:lname" Value="doe" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
-            <parameters Name="tns:email" Value="jdoe@tibco.com" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
-            <parameters Name="tns:phone" Value="93222" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+            <parameters Name="tns:fname" Value="string" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+            <parameters Name="tns:lname" Value="string" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+            <parameters Name="tns:email" Value="string@gmail.com" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
+            <parameters Name="tns:phone" Value="93827232" type="string" nameSpace="http://www.example.com/namespaces/tns/1581511171644" canDelete="true"/>
           </Parameter>
         </informations>
       </Inputs>
-      <resolvedInput inputValue="&lt;tns:Element xmlns:tns='http://www.example.com/namespaces/tns/1581511171644' >&lt;tns:fname>john&lt;/tns:fname>&lt;tns:lname>doe&lt;/tns:lname>&lt;tns:email>jdoe@tibco.com&lt;/tns:email>&lt;tns:phone>93222&lt;/tns:phone>&lt;/tns:Element>"/>
+      <resolvedInput inputValue="&lt;tns:Element xmlns:tns='http://www.example.com/namespaces/tns/1581511171644' >&lt;tns:fname>string&lt;/tns:fname>&lt;tns:lname>string&lt;/tns:lname>&lt;tns:email>string@gmail.com&lt;/tns:email>&lt;tns:phone>93827232&lt;/tns:phone>&lt;/tns:Element>"/>
     </Operation>
   </ProcessNode>
 </emulation:EmulationData>
