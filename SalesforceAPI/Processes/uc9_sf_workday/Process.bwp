@@ -1467,6 +1467,8 @@
             namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns6"/>
         <tibex:namespaceItem
             namespace="http://www.example.com/namespaces/tns/1557908972064" prefix="tns7"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.com/namespaces/tns/1581511246093" prefix="tns8"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../SalesforceResources/Salesforce_Metadata.xsd" namespace="urn:sobject.partner.soap.sforce.com"/>
@@ -1544,19 +1546,10 @@
                                 tibex:xpdlId="2e8b81ab-d3d5-4c03-b852-91f1efd4fa5e" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20190515133734&quot; xmlns:tns8=&quot;http://www.example.com/namespaces/tns/1581511246093&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CallSF&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;concat(&amp;quot;SF Contact created successfully   &amp;quot;, $CallSF/tns8:trxid)&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20190515133734&quot; xmlns:tns8=&quot;http://www.example.com/namespaces/tns/1581511246093&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CallSF&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;concat(&amp;quot;Contact created successfully in SF &amp;quot;, $CallSF/tns8:trxid)&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20190515133734" xmlns:tns8="http://www.example.com/namespaces/tns/1581511246093" version="2.0"&gt;
-    &lt;xsl:param name="CallSF"/&gt;
-    &lt;xsl:template name="postOut-input" match="/"&gt;
-        &lt;tns1:postResponse&gt;
-            &lt;item&gt;
-                &lt;xsl:value-of select="concat(&amp;quot;SF Contact created successfully   &amp;quot;, $CallSF/tns8:trxid)"/&gt;
-            &lt;/item&gt;
-        &lt;/tns1:postResponse&gt;
-    &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20190515133734" xmlns:tns8="http://www.example.com/namespaces/tns/1581511246093" version="2.0"&gt;&lt;xsl:param name="CallSF"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns1:postResponse&gt;&lt;item&gt;&lt;xsl:value-of select="concat(&amp;quot;Contact created successfully in SF &amp;quot;, $CallSF/tns8:trxid)"/&gt;&lt;/item&gt;&lt;/tns1:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="CallSFTopostOut"/>
                                 </bpws:targets>
