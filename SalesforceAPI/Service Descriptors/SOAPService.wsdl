@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:extns="http://tns.tibco.com/bw/REST" xmlns:tns="http://www.example.org/wsdl/1582093644242" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SOAPService" targetNamespace="http://www.example.org/wsdl/1582093644242">
+  <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="unqualified" targetNamespace="http://www.example.org/wsdl/1582093644242" xmlns:Q1="http://www.example.org/contact">
+            <xsd:import namespace="http://www.example.org/contact"></xsd:import>
+            <xsd:element name="SFContactOpRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="Q1:contacttype"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SFContactOpResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SFContactOpRequest">
+    <wsdl:part element="tns:SFContactOpRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SFContactOpResponse">
+    <wsdl:part element="tns:SFContactOpResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SOAPService">
+    <wsdl:operation name="SFContactOp">
+      <wsdl:input message="tns:SFContactOpRequest" name="SFContactOpInput"/>
+      <wsdl:output message="tns:SFContactOpResponse" name="SFContactOpOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
