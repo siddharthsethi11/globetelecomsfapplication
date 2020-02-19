@@ -605,29 +605,29 @@
                                     <children type="4002 bw.bwsalesforce.SalesforceCreate">
                                     <children type="4017">
                                     <styles
-                                    fontName="Segoe UI"
+                                    fontName="Cantarell"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
-                                    fontName="Segoe UI"
+                                    fontName="Cantarell"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
-                                    fontName="Segoe UI"
+                                    fontName="Cantarell"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
-                                    fontName="Segoe UI"
+                                    fontName="Cantarell"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
-                                    <styles fontName="Segoe UI"
+                                    <styles fontName="Cantarell"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles
                                     backgroundColor="16777215"
@@ -636,8 +636,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="149"
-                                    xsi:type="notation:Bounds" y="103"/>
+                                    x="189"
+                                    xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -702,9 +702,9 @@
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <styles fontName="Cantarell" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[25, -18, -108, 78]$[109, -78, -24, 18]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -725,6 +725,8 @@
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1581511246093"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../SalesforceResources/Salesforce_Metadata.xsd" namespace="urn:sobject.partner.soap.sforce.com"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../../../../globe/workspace/GlobeWSV2/Test/SalesforceResources/Salesforce_Metadata.xsd" namespace="urn:sobject.partner.soap.sforce.com"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -759,7 +761,7 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToSalesforceCreateAll" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SalesforceCreateAllToEnd" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
@@ -768,7 +770,7 @@
                     tibex:xpdlId="b76b962e-98bc-4db5-ae4e-830711427c93"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToSalesforceCreateAll"/>
+                        <bpws:source linkName="StartToEnd"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -784,7 +786,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.example.com/namespaces/tns/1581511246093&quot; xmlns:tns3=&quot;urn:partner.soap.sforce.com_createAllOutput&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SalesforceCreateAll&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns2:Element>&lt;xsl:choose>&lt;xsl:when test=&quot;$SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:success=true()&quot;>&lt;tns2:status>&lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&lt;/tns2:status>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns2:status>&lt;xsl:value-of select=&quot;&amp;quot;Fail&amp;quot;&quot;/>&lt;/tns2:status>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;xsl:if test=&quot;not(($SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:id/@xsi:nil=(&amp;quot;true&amp;quot;)) or ($SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:id/@xsi:nil=(&amp;quot;1&amp;quot;)))&quot;>&lt;tns2:trxid>&lt;xsl:value-of select=&quot;$SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:id&quot;/>&lt;/tns2:trxid>&lt;/xsl:if>&lt;/tns2:Element>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.example.com/namespaces/tns/1581511246093&quot; xmlns:tns3=&quot;urn:partner.soap.sforce.com_createAllOutput&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SalesforceCreateAll&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns2:Element>&lt;xsl:choose>&lt;xsl:when test=&quot;$SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:success = true()&quot;>&lt;tns2:status>&lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&lt;/tns2:status>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns2:status>&lt;xsl:value-of select=&quot;&amp;quot;Fail&amp;quot;&quot;/>&lt;/tns2:status>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;xsl:if test=&quot;not(($SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:id/@xsi:nil=(&amp;quot;true&amp;quot;)) or ($SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:id/@xsi:nil=(&amp;quot;1&amp;quot;)))&quot;>&lt;tns2:trxid>&lt;xsl:value-of select=&quot;$SalesforceCreateAll/createAllResponse/tns3:result[1]/tns3:id&quot;/>&lt;/tns2:trxid>&lt;/xsl:if>&lt;/tns2:Element>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -807,16 +809,16 @@
                     inputVariable="SalesforceCreateAll-input"
                     name="SalesforceCreateAll"
                     outputVariable="SalesforceCreateAll"
-                    tibex:xpdlId="10e7a57e-98a8-4d2e-9a8c-b83fed649f4e" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="8ff0c3c2-487b-4ac0-adb3-b8c93cf8e285" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="StartToSalesforceCreateAll"/>
+                        <bpws:target linkName="StartToEnd"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="SalesforceCreateAllToEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;urn:partner.soap.sforce.com_createAllInput&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns=&quot;urn:sobject.partner.soap.sforce.com&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1581511171644&quot; version=&quot;2.0&quot;>&lt;xsl:import-schema namespace=&quot;urn:sobject.partner.soap.sforce.com&quot; schema-location=&quot;../../SalesforceResources/Salesforce_Metadata.xsd&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;SalesforceCreateAll-input&quot; match=&quot;/&quot;>&lt;tns:createAllInput>&lt;create>&lt;createSObjects>&lt;tns:sObjects xsi:type=&quot;ns:Contact&quot;>&lt;xsl:if test=&quot;$Start/tns1:lname&quot;>&lt;ns:LastName>&lt;xsl:value-of select=&quot;$Start/tns1:lname&quot;/>&lt;/ns:LastName>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns1:fname&quot;>&lt;ns:FirstName>&lt;xsl:value-of select=&quot;$Start/tns1:fname&quot;/>&lt;/ns:FirstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns1:phone&quot;>&lt;ns:Phone>&lt;xsl:value-of select=&quot;$Start/tns1:phone&quot;/>&lt;/ns:Phone>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns1:email&quot;>&lt;ns:Email>&lt;xsl:value-of select=&quot;$Start/tns1:email&quot;/>&lt;/ns:Email>&lt;/xsl:if>&lt;/tns:sObjects>&lt;/createSObjects>&lt;/create>&lt;/tns:createAllInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;urn:partner.soap.sforce.com_createAllInput&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ns=&quot;urn:sobject.partner.soap.sforce.com&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1581511171644&quot; version=&quot;2.0&quot;>&lt;xsl:import-schema namespace=&quot;urn:sobject.partner.soap.sforce.com&quot; schema-location=&quot;../../../../../globe/workspace/GlobeWSV2/Test/SalesforceResources/Salesforce_Metadata.xsd&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;SalesforceCreateAll-input&quot; match=&quot;/&quot;>&lt;tns:createAllInput>&lt;create>&lt;createSObjects>&lt;tns:sObjects xsi:type=&quot;ns:Contact&quot;>&lt;xsl:if test=&quot;$Start/tns1:lname&quot;>&lt;ns:LastName>&lt;xsl:value-of select=&quot;$Start/tns1:lname&quot;/>&lt;/ns:LastName>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns1:fname&quot;>&lt;ns:FirstName>&lt;xsl:value-of select=&quot;$Start/tns1:fname&quot;/>&lt;/ns:FirstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns1:phone&quot;>&lt;ns:Phone>&lt;xsl:value-of select=&quot;$Start/tns1:phone&quot;/>&lt;/ns:Phone>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns1:email&quot;>&lt;ns:Email>&lt;xsl:value-of select=&quot;$Start/tns1:email&quot;/>&lt;/ns:Email>&lt;/xsl:if>&lt;/tns:sObjects>&lt;/createSObjects>&lt;/create>&lt;/tns:createAllInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
