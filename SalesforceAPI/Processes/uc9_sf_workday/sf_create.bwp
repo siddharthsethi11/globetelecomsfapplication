@@ -636,8 +636,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="168"
-                                    xsi:type="notation:Bounds" y="104"/>
+                                    x="149"
+                                    xsi:type="notation:Bounds" y="103"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
